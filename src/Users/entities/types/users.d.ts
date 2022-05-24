@@ -3,7 +3,7 @@ import { InferType } from "yup";
 import { bodyRequestLoginYup, bodyRequestRegisterYup } from "../../validators";
 
 export interface User {
-  name: string;
+  name?: string;
   email: string;
   password: string;
   role?: string;

@@ -3,4 +3,5 @@ export type {
   User,
   BodyRequestLogin,
   BodyRequestRegister,
+  UserMongoose,
 } from "./types/users";
