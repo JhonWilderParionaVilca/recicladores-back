@@ -2,7 +2,7 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import morgan from "../shared/logger/morganLogger";
 import { APP } from "../constants/app";
 import Logger from "../shared/logger/appLogger";
-import UserRoutes from "../User/routes/users.routes";
+import UserRoutes from "../Users/routes/users.routes";
 
 class Server {
   app: Application;
@@ -22,7 +22,7 @@ class Server {
   }
 
   routes() {
-    this.app.use("/auth/local", UserRoutes);
+    this.app.use("/users", UserRoutes);
   }
 
   errorHandler() {
