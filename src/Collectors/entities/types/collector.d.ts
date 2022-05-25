@@ -12,11 +12,17 @@ export interface Collector {
     coordinates: [number, number];
   };
   items: string[];
+  createdBy: Types.ObjectId;
 }
 
 export type BodyRequestCreateCollector = InferType<
   typeof bodyRequestCreateCollectorYup
 >;
+
+export interface BodyRequestCreateCollectorByUserId
+  extends BodyRequestCreateCollector {
+  createdBy: string;
+}
 
 export type QueryRequestNearCollector = InferType<
   typeof queryRequestNearCollectorYup
