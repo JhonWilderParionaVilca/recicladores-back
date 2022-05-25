@@ -3,7 +3,7 @@ import { createResource } from "../../shared/factory/createResource";
 import { parseStringAsArray } from "../../shared/utils/parseStringAsArray";
 import { CollectorModel } from "../entities";
 import type {
-  BodyRequestCreateCollector,
+  BodyRequestCreateCollectorByUserId,
   CollectorMongoose,
 } from "../entities/types/collector";
 
@@ -14,7 +14,8 @@ export const createCollectorService = async ({
   items,
   latitude,
   longitude,
-}: BodyRequestCreateCollector): Promise<CollectorMongoose> => {
+  createdBy,
+}: BodyRequestCreateCollectorByUserId): Promise<CollectorMongoose> => {
   try {
     const location = {
       type: "Point",
@@ -31,6 +32,7 @@ export const createCollectorService = async ({
       phone,
       items: itemsArray,
       location,
+      createdBy,
     });
     return newCollector;
   } catch (error: any) {

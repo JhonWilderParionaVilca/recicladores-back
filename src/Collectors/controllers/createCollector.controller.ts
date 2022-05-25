@@ -9,7 +9,7 @@ export const createCollectorController = async (
   next: NextFunction
 ) => {
   try {
-    // const {userId} = req:
+    const { userId } = req;
     const { name, email, phone, items, latitude, longitude } = req.body;
 
     const collectorCreated = await createCollectorService({
@@ -19,6 +19,7 @@ export const createCollectorController = async (
       items,
       latitude,
       longitude,
+      createdBy: userId,
     });
 
     res.status(200).json({
