@@ -21,6 +21,10 @@ export const CollectorSchema = new Schema<Collector>(
       lowercase: true,
       trim: true,
     },
+    image_url: {
+      type: String,
+      required: [true, "image Collector is required"],
+    },
     email: {
       type: String,
       required: [true, "email is required"],

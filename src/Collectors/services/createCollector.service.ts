@@ -9,6 +9,7 @@ import type {
 
 export const createCollectorService = async ({
   name,
+  image_url,
   email,
   phone,
   items,
@@ -28,6 +29,7 @@ export const createCollectorService = async ({
       CollectorModel
     )({
       name,
+      image_url,
       email,
       phone,
       items: itemsArray,
