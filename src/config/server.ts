@@ -3,6 +3,7 @@ import morgan from "../shared/logger/morganLogger";
 import { APP } from "../constants/app";
 import Logger from "../shared/logger/appLogger";
 import UserRoutes from "../Users/routes/users.routes";
+import CollectorRoutes from "../Collectors/routes/collector.routes";
 
 class Server {
   app: Application;
@@ -22,7 +23,8 @@ class Server {
   }
 
   routes() {
-    this.app.use("/users", UserRoutes);
+    this.app.use("/api/v1/users", UserRoutes);
+    this.app.use("/api/v1/collectors", CollectorRoutes);
   }
 
   errorHandler() {
