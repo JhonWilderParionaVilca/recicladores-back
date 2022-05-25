@@ -1,5 +1,6 @@
 import { ApplicationError } from "../../shared";
 import { createResource } from "../../shared/factory/createResource";
+import { parseStringAsArray } from "../../shared/utils/parseStringAsArray";
 import { CollectorModel } from "../entities";
 import type {
   BodyRequestCreateCollector,
@@ -20,13 +21,15 @@ export const createCollectorService = async ({
       coordinates: [longitude, latitude],
     };
 
+    const itemsArray = parseStringAsArray(items);
+
     const newCollector: CollectorMongoose = await createResource(
       CollectorModel
     )({
       name,
       email,
       phone,
-      items,
+      items: itemsArray,
       location,
     });
     return newCollector;

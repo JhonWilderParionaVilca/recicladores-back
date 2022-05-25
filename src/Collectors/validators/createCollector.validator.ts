@@ -18,10 +18,7 @@ export const bodyRequestCreateCollectorYup = yup.object({
     })
     .trim()
     .required("Ingresa un telefono"),
-  items: yup
-    .array(yup.string().lowercase().trim().required("ingrese un item"))
-    .min(1)
-    .required("El nombre es requerido"),
+  items: yup.string().lowercase().trim().required("ingrese un item"),
   longitude: yup
     .number()
     .min(-199, "valor minimo longitud -199")
