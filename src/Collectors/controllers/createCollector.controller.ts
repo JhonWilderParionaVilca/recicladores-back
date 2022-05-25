@@ -9,6 +9,14 @@ export const createCollectorController = async (
   next: NextFunction
 ) => {
   try {
+    if (!req.file) {
+      throw new ApplicationError(
+        "No se envió la imagen",
+        "multer",
+        "req.file",
+        404
+      );
+    }
     const { userId } = req;
     const { name, email, phone, items, latitude, longitude } = req.body;
 
