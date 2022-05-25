@@ -5,6 +5,7 @@ import { queryRequestNearCollectorYup } from "../../validators/nearCollectors.va
 
 export interface Collector {
   name: string;
+  image_url: string;
   email: string;
   phone: string;
   location: {
@@ -21,6 +22,7 @@ export type BodyRequestCreateCollector = InferType<
 
 export interface BodyRequestCreateCollectorByUserId
   extends BodyRequestCreateCollector {
+  image_url: string;
   createdBy: string;
 }
 

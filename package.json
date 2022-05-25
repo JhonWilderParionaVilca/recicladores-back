@@ -27,7 +27,9 @@
     "morgan": "1.10.0",
     "multer": "1.4.4",
     "winston": "3.7.2",
-    "yup": "0.32.11"
+    "yup": "0.32.11",
+    "cloudinary": "1.30.0",
+    "datauri": "4.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
