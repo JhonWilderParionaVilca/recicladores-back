@@ -1,4 +1,5 @@
 import express, { Application, NextFunction, Request, Response } from "express";
+import cors from "cors";
 import morgan from "../shared/logger/morganLogger";
 import { APP } from "../constants/app";
 import Logger from "../shared/logger/appLogger";
@@ -18,6 +19,7 @@ class Server {
   }
 
   middlewares() {
+    this.app.use(cors());
     this.app.use(morgan);
     this.app.use(express.json());
   }

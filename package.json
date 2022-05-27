@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "bcrypt": "5.0.1",
+    "cloudinary": "1.30.0",
+    "cors": "2.8.5",
+    "datauri": "4.1.0",
     "dotenv": "16.0.0",
     "express": "4.17.3",
     "jsonwebtoken": "8.5.1",
@@ -27,14 +30,13 @@
     "morgan": "1.10.0",
     "multer": "1.4.4",
     "winston": "3.7.2",
-    "yup": "0.32.11",
-    "cloudinary": "1.30.0",
-    "datauri": "4.1.0"
+    "yup": "0.32.11"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
     "@commitlint/config-conventional": "16.2.1",
     "@types/bcrypt": "5.0.0",
+    "@types/cors": "2.8.12",
     "@types/express": "4.17.13",
     "@types/jest": "27.4.1",
     "@types/jsonwebtoken": "8.5.8",
